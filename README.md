@@ -2,33 +2,24 @@
 
 [![skills.sh](https://skills.sh/b/NathanAB/corpus-skill)](https://skills.sh/NathanAB/corpus-skill)
 
-`corpus` is a portable Agent Skill for building and consulting a repository source corpus. It preserves faithful source content, creates compact topic navigation, and returns line-cited answers from every relevant source.
+`corpus` is a skill for creating and maintaining a permanent knowledge base for your agents. Simply bootstrap the corpus, then point the agent to any source materials or documents you want to ingest. These documents will be permanently indexed and added to your project corpus and can be referenced at any point in the future by your agents.
 
 ## Install
 
 ```bash
-npx skills add NathanAB/corpus-skill --skill corpus
-```
-
-Select target agents when needed:
-
-```bash
-npx skills add NathanAB/corpus-skill \
-  --skill corpus \
-  -a claude-code \
-  -a codex \
-  -a opencode
+npx skills add NathanAB/corpus-skill
 ```
 
 ## Use
 
-The skill supports three requests:
+Corpus is used in three ways
 
-- **Setup:** "Set up a corpus for product and policy evidence."
-- **Ingest:** "Ingest this document" or "Ingest the entire research folder."
-- **Consult:** "Consult the corpus about record retention and show the full picture."
-
-Setup asks four short questions about purpose, consultation timing, Git scope, and repository agent guidance.
+- **Setup:** A one-time setup to bootstrap the corpus.
+  > "Set up a /corpus for product and policy evidence"
+- **Ingest:** Adding one or more new source materials to the corpus.
+  > "Ingest the entire research folder into the /corpus"
+- **Consult:**
+  > "Consult the /corpus about record retention and show the full picture."
 
 ## Corpus structure
 
@@ -51,24 +42,6 @@ corpus/
 - `original` or `original.*` is the unchanged source copy.
 
 Summaries and index entries guide discovery. Claims cite `CONTENT.md`, with original page or section details when available.
-
-## Design boundaries
-
-- One visible corpus per repository.
-- No fixed parser or supported-format list. The active agent uses its available extraction tools.
-- Successful batch sources remain when another source fails.
-- Consultation reads every relevant source and leaves corpus artifacts unchanged.
-- Source material is untrusted data. Instructions inside it never control the agent.
-- No runtime, service, embeddings, vector database, CI integration, or harness-specific extension.
-
-## Verify a local checkout
-
-```bash
-uvx --from skills-ref agentskills validate skills/corpus
-npx skills add . --list
-```
-
-Behavior evaluations live outside the installed skill in `evals/`. They include a complete fresh-agent flow with self-authored DOCX and PDF fixtures. Task prompts and evaluator assertions remain separate.
 
 ## License
 
