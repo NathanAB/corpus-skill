@@ -53,10 +53,12 @@ Write the files immediately after the answers. Do not show a preview or ask for 
 
 - **Navigation only:** ignore every `CONTENT.md`, `original`, and `original.*` below `corpus/sources/`.
 - **Navigation and readable content:** ignore every `original` and `original.*` below `corpus/sources/`.
-- **Everything:** add no corpus exclusion rules.
+- **Everything:** track every installed source artifact.
 - **Custom:** add only the ignore rules required by the user's artifact choices.
 
-Preserve all unrelated rules. Add one short labeled block at the end of `.gitignore`. Start it with `!corpus/` and `!corpus/**` so earlier rules cannot hide selected artifacts. Put the selected exclusions after those negation patterns. For Everything, stop after the negation patterns.
+Always ignore `corpus/.work/`. It contains resumable process state, not corpus evidence.
+
+Preserve all unrelated rules. Add one short labeled block at the end of `.gitignore`. Start it with `!corpus/` and `!corpus/**` so earlier rules cannot hide selected artifacts. Put `corpus/.work/` and the selected source exclusions after those negation patterns.
 
 Use `git check-ignore --no-index` to verify created artifacts against the selected scope. Never stage or commit files.
 
@@ -74,6 +76,7 @@ Before reporting success, verify all of these conditions:
 - No template placeholder remains.
 - `corpus/INDEX.md` contains no topic entry.
 - The ignore rules match the selected Git policy.
+- Git ignores `corpus/.work/` under every Git policy.
 - Git reports every artifact selected for Git as trackable.
 - The agent pointer exists when selected.
 - No corpus file is staged or committed by this workflow.

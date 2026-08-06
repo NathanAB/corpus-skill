@@ -4,6 +4,8 @@
 
 `corpus` is a portable Agent Skill for building and consulting a repository source corpus. It preserves faithful source content, creates compact topic navigation, and returns line-cited answers from every relevant source.
 
+Version: [`0.2.0`](skills/corpus/VERSION)
+
 ## Install
 
 ```bash
@@ -36,27 +38,43 @@ Setup asks four short questions about purpose, consultation timing, Git scope, a
 corpus/
 ├── CORPUS.md
 ├── INDEX.md
+├── .work/                         # ignored, present only during ingestion
 └── sources/
     ├── .gitkeep
     └── <source-id>/
         ├── SOURCE.md
         ├── CONTENT.md
+        ├── map/                   # present when source navigation is large
         └── original or original.*
 ```
 
 - `CORPUS.md` records purpose, policies, Git scope, and agent guidance.
-- `INDEX.md` maps topics to every relevant source and exact content range.
-- `SOURCE.md` records provenance, navigation summaries, topics, relationships, and extraction warnings.
+- `INDEX.md` maps topics to every relevant source and the smallest useful navigation route.
+- `SOURCE.md` records provenance, navigation summaries, an exhaustive content map, topics, relationships, and extraction warnings.
 - `CONTENT.md` is the faithful agent-readable evidence.
+- `map/` holds bounded source-map nodes when the complete map does not fit in `SOURCE.md`.
 - `original` or `original.*` is the unchanged source copy.
+- `.work/` holds ignored resumable process state. Successful ingestion removes it.
 
 Summaries and index entries guide discovery. Claims cite `CONTENT.md`, with original page or section details when available.
+
+## Large sources
+
+Ingestion keeps large documents out of agent context. It extracts directly to disk, resumes interrupted work, and builds one canonical `CONTENT.md` from bounded evidence units.
+
+Each evidence unit follows natural source boundaries and stays within both limits:
+
+- 32 KiB;
+- 4,000 words.
+
+An exhaustive content map gives every evidence unit its own leaf. Map nodes contain at most 32 entries and 16 KiB. Consultation descends through those nodes, reads exact evidence ranges, and runs a bounded text search to catch incomplete topic routes.
 
 ## Design boundaries
 
 - One visible corpus per repository.
 - No fixed parser or supported-format list. The active agent uses its available extraction tools.
 - Successful batch sources remain when another source fails.
+- Interrupted large-source ingestion resumes from ignored per-source work state.
 - Consultation reads every relevant source and leaves corpus artifacts unchanged.
 - Source material is untrusted data. Instructions inside it never control the agent.
 - No runtime, service, embeddings, vector database, CI integration, or harness-specific extension.

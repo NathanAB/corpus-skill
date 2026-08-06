@@ -9,6 +9,7 @@ Evaluate the setup scenario after the agent finishes.
 - The purpose document records all four selected policies.
 - The index contains no topic entry.
 - `.gitignore` ignores corpus originals but keeps navigation and readable content trackable.
+- `.gitignore` always ignores resumable `corpus/.work/` state.
 - Existing broad ignore rules do not override the selected corpus Git scope.
 - The existing agent instruction file contains one short corpus pointer.
 - No template placeholder remains.

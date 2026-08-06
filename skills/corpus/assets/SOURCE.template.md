@@ -9,10 +9,17 @@
 - Original: `{{ORIGINAL_PATH}}`
 - SHA-256: `{{CHECKSUM}}`
 - Extraction method: {{EXTRACTION_METHOD}}
+- Content SHA-256: `{{CONTENT_CHECKSUM}}`
+- Content size: {{CONTENT_BYTES}} bytes, {{CONTENT_WORDS}} words, {{CONTENT_LINES}} lines
+- Evidence units: {{UNIT_COUNT}}
 
 ## Summary
 
 {{GROUNDED_SUMMARY}}
+
+## Content map
+
+{{CONTENT_MAP_OR_ROOT}}
 
 ## Topics
 

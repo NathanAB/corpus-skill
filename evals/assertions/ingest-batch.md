@@ -13,3 +13,4 @@ Evaluate both batch runs after the agent finishes.
 - The first report separates successes, duplicate skips, ignored files, conflicts, and failures.
 - The second run skips exact successes and retries the missing input without a separate state file.
 - The topic index contains every relevant source and exact content ranges.
+- Every successful source has complete content-map coverage and no remaining work state.
