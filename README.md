@@ -25,7 +25,7 @@ Corpus is used in three ways
   > "Set up a /corpus for product and policy evidence"
 - **Ingest:** Adding one or more new source materials to the corpus.
   > "Ingest the entire research folder into the /corpus"
-- **Consult:**
+- **Consult:** Pull relevant information from the corpus.
   > "Consult the /corpus about record retention and show the full picture."
 
 ## Corpus structure
