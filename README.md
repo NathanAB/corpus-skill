@@ -1,8 +1,13 @@
-# corpus-skill
+
+# Corpus
 
 [![skills.sh](https://skills.sh/b/NathanAB/corpus-skill)](https://skills.sh/NathanAB/corpus-skill)
 
-`corpus` is a skill for creating and maintaining a permanent knowledge base for your agents. Simply bootstrap the corpus, then point the agent to any source materials or documents you want to ingest. These documents will be permanently indexed and added to your project corpus and can be referenced at any point in the future by your agents.
+`corpus` is a skill for creating and maintaining a permanent knowledge base for your agents. Simply bootstrap the corpus, then point the agent to any source materials or documents you want the corpus to ingest. These documents will be permanently indexed and added to your project corpus and can be consulted at any point in the future by your agents.
+
+<img width="220" height="263" alt="learning" src="https://github.com/user-attachments/assets/82ce380c-12c3-4719-b6ef-e6290b65daa0" />
+
+_Above: your agent invoking corpus_
 
 ## Install
 
