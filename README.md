@@ -1,9 +1,10 @@
-
 # Corpus
 
 [![skills.sh](https://skills.sh/b/NathanAB/corpus-skill)](https://skills.sh/NathanAB/corpus-skill)
 
-`corpus` is a skill for creating and maintaining a permanent knowledge base for your agents. Simply bootstrap the corpus, then point the agent to any source materials or documents you want the corpus to ingest. These documents will be permanently indexed and added to your project corpus and can be consulted at any point in the future by your agents.
+A skill that keeps source documents as a git-tracked **evidence** folder your agent cites by file and line. It is not a search index, not a wiki, and not a file converter.
+
+Install it, copy the example, and ask one consult question. You should get an answer that quotes the real text, including conflicts.
 
 <img width="220" height="263" alt="learning" src="https://github.com/user-attachments/assets/82ce380c-12c3-4719-b6ef-e6290b65daa0" />
 
@@ -17,16 +18,41 @@ Version: [`0.2.0`](skills/corpus/VERSION)
 npx skills add NathanAB/corpus-skill
 ```
 
+## Try it
+
+From a git repo where the skill is installed:
+
+```bash
+cp -R path/to/corpus-skill/examples/retention corpus
+```
+
+If this repository is already the working copy:
+
+```bash
+cp -R examples/retention corpus
+```
+
+Then ask:
+
+> Consult the corpus about record retention. Show the full picture.
+
+You should see both the seven-year and ten-year positions, with citations into `corpus/sources/*/CONTENT.md`. The example also contains an embedded instruction to ignore citation rules; a correct consult treats that as untrusted text and does not follow it.
+
 ## Use
 
-Corpus is used in three ways
+- **Setup:** one-time bootstrap in a project that has no corpus yet.
+  > Set up a corpus for product and policy evidence
+- **Ingest:** add source files or folders.
+  > Ingest notes/retention-policy.md into the corpus
+- **Consult:** answer from ingested evidence.
+  > Consult the corpus about record retention. Show the full picture.
 
-- **Setup:** A one-time setup to bootstrap the corpus.
-  > "Set up a /corpus for product and policy evidence"
-- **Ingest:** Adding one or more new source materials to the corpus.
-  > "Ingest the entire research folder into the /corpus"
-- **Consult:**
-  > "Consult the /corpus about record retention and show the full picture."
+## Limits
+
+- Scanned or image-only PDFs fail. There is no OCR path in this skill.
+- Word, PowerPoint, and text PDFs are converted with whatever tools the agent already has. Corpus stores the result as evidence; it does not ship a converter.
+- Already-readable markdown and text copy through as-is.
+- Claims must come from `CONTENT.md`, not from summaries or the topic index.
 
 ## Corpus structure
 
