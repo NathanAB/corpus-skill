@@ -44,7 +44,7 @@ You should see both the seven-year and ten-year positions, with citations into `
   > Set up a corpus for product and policy evidence
 - **Ingest:** add source files or folders.
   > Ingest notes/retention-policy.md into the corpus
-- **Consult:** answer from ingested evidence.
+- **Consult:** Pull relevant information from the corpus.
   > Consult the corpus about record retention. Show the full picture.
 
 ## Limits
