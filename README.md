@@ -4,11 +4,13 @@
 
 A skill that keeps source documents as a git-tracked **evidence** folder your agent cites by file and line. It is not a search index, not a wiki, and not a file converter.
 
+Use it when policy, handbook, research, or other source-of-truth files are too large to dump into agent instructions, and you need citations plus conflicts — not a paraphrase. Skip it for a wiki, RAG chunks, chat memory, or a one-off “read this file.”
+
 <img width="220" height="263" alt="learning" src="https://github.com/user-attachments/assets/82ce380c-12c3-4719-b6ef-e6290b65daa0" />
 
 _Above: your agent invoking corpus_
 
-Version: [`0.2.1`](skills/corpus/VERSION)
+Version: [`0.2.2`](skills/corpus/VERSION)
 
 ## Install
 

@@ -1,11 +1,12 @@
 ---
 name: corpus
-description: Set up, ingest, and consult a git-tracked evidence corpus of project source documents. Use when creating a corpus, ingesting markdown, PDF, or Word files, or answering, comparing, or verifying a claim from an existing corpus with citations to source text. Do not use for generic RAG, wikis, or a one-off file the user only wants read once.
+description: Use when creating a git-tracked evidence corpus, ingesting markdown, PDF, or Word files, or answering from those sources with citations. Use when the user wants agents to cite policy, handbook, or source-of-truth documents instead of paraphrasing them, or when corpus/ already exists. Do not use for generic RAG, wikis, chat memory, or a one-off file to read once.
+license: MIT
 ---
 
 # Corpus
 
-Maintain one visible evidence corpus in `corpus/`.
+Maintain one visible evidence corpus in `corpus/`. Cite `CONTENT.md`. This is not RAG, a wiki, or chat memory.
 
 ## Setup
 

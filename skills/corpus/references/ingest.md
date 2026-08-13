@@ -58,6 +58,8 @@ The work directory is resumable process state. It is not evidence and never belo
 
 Inspect source metadata and exposed structure without reading the complete source into context. Prefer chapters, headings, pages, slides, sheets, records, and other source-native boundaries.
 
+If the source is not already readable text and no available tool can write extracted text to a work-directory file, stop that source as a terminal failure. Name the missing capability. Do not paste binary or base64 source into context.
+
 1. Plan one bounded source range and append its `pending` row to `RAW-STATE.tsv`.
 2. Extract that range directly into a file under `raw/`. Keep full extraction output out of agent context.
 3. Verify the file, then immediately replace its row with `complete`, checksum, byte count, word count, and extraction warnings.

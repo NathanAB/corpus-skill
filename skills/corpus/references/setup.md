@@ -23,9 +23,9 @@ When the request is silent, apply these defaults instead of asking:
 
 **Git scope has no default.** If the request does not choose one, ask only this question. Use structured multiple-choice input when available. Otherwise present one compact numbered form:
 
-- Navigation only: purpose, index, summaries, and provenance
-- Navigation and readable content: keep originals local
-- Everything: include originals
+- Navigation only: purpose, index, summaries, and provenance. Clones cannot consult; `CONTENT.md` is not in Git.
+- Navigation and readable content: keep originals local. Clones can consult `CONTENT.md`.
+- Everything: include originals. Clones can consult and also receive the source files.
 - Custom
 
 Ask one short follow-up only when a custom Git choice lacks required detail. Do not ask purpose, consult timing, or pointer unless they are still unresolved after inference and defaults.
@@ -38,7 +38,7 @@ Complete this step when every answer maps to a concrete purpose, consultation po
 2. Create `corpus/CORPUS.md` from [the corpus template](../assets/CORPUS.template.md).
 3. Create `corpus/INDEX.md` from [the index template](../assets/INDEX.template.md). Keep it free of topic entries until ingestion.
 4. Replace every placeholder with repository facts and user choices.
-5. Record the selected Git scope in `CORPUS.md`.
+5. Record the selected Git scope in `CORPUS.md` by name and say whether clones can consult `CONTENT.md`.
 
 Write the files immediately after the answers. Do not show a preview or ask for final confirmation.
 
