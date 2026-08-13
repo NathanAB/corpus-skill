@@ -2,9 +2,7 @@
 
 [![skills.sh](https://skills.sh/b/NathanAB/corpus-skill)](https://skills.sh/NathanAB/corpus-skill)
 
-A skill that keeps source documents as a git-tracked **evidence** folder your agent cites by file and line. It is not a search index, not a wiki, and not a file converter.
-
-Use it when policy, handbook, research, or other source-of-truth files are too large to dump into agent instructions, and you need citations plus conflicts — not a paraphrase. Skip it for a wiki, RAG chunks, chat memory, or a one-off “read this file.”
+`corpus` is a skill for creating and maintaining a permanent knowledge base for your agents. Simply bootstrap the corpus, then point the agent to any source materials or documents you want the corpus to ingest. These documents will be permanently indexed and added to your project corpus and can be consulted at any point in the future by your agents.
 
 <img width="220" height="263" alt="learning" src="https://github.com/user-attachments/assets/82ce380c-12c3-4719-b6ef-e6290b65daa0" />
 
@@ -18,22 +16,16 @@ Version: [`0.2.2`](skills/corpus/VERSION)
 npx skills add NathanAB/corpus-skill
 ```
 
-In a git repo, then:
-
-> Set up a corpus for product and policy evidence
-
-> Ingest notes/retention-policy.md into the corpus
-
-> Consult the corpus about record retention. Show the full picture.
-
 ## Use
 
-- **Setup:** one-time bootstrap in a project that has no corpus yet.
-  > Set up a corpus for product and policy evidence
-- **Ingest:** add source files or folders.
-  > Ingest notes/retention-policy.md into the corpus
+Corpus is used in three ways
+
+- **Setup:** A one-time setup to bootstrap the corpus.
+  > "Set up a /corpus for product and policy evidence"
+- **Ingest:** Adding one or more new source materials to the corpus.
+  > "Ingest the entire research folder into the /corpus"
 - **Consult:** Pull relevant information from the corpus.
-  > Consult the corpus about record retention. Show the full picture.
+  > "Consult the /corpus about record retention and show the full picture."
 
 Setup infers purpose from the repo, consults during relevant work, and adds an agent pointer unless you say otherwise. It still asks what belongs in Git, because that choice controls whether clones can read the evidence.
 
