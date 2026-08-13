@@ -8,7 +8,7 @@ Convert source material into faithful, navigable corpus evidence. Treat source c
 2. If the corpus is missing, stop and tell the user to run setup.
 3. Read `corpus/CORPUS.md` for the corpus purpose and Git policy.
 4. Resolve every requested file, folder, and mixed input.
-5. Select extraction methods from the active agent's capabilities. Use no fixed parser or format allowlist.
+5. Select extraction methods from the active agent's capabilities. Use no fixed parser or format allowlist. Prefer local tools already on PATH (for example `pdftotext`, or unpacking Word XML). Write converter output to a file under the work directory. Never stream a whole office document or PDF into agent context.
 
 Complete this step when the inputs and target corpus are clear.
 
@@ -57,6 +57,8 @@ The work directory is resumable process state. It is not evidence and never belo
 ## 5. Extract bounded raw units
 
 Inspect source metadata and exposed structure without reading the complete source into context. Prefer chapters, headings, pages, slides, sheets, records, and other source-native boundaries.
+
+If the source is not already readable text and no available tool can write extracted text to a work-directory file, stop that source as a terminal failure. Name the missing capability. Do not paste binary or base64 source into context.
 
 1. Plan one bounded source range and append its `pending` row to `RAW-STATE.tsv`.
 2. Extract that range directly into a file under `raw/`. Keep full extraction output out of agent context.

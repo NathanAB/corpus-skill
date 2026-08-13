@@ -11,33 +11,26 @@ Create one repository corpus through a short guided process.
 
 Complete this step when you know the repository purpose, likely corpus title, and available agent instruction file.
 
-## 2. Ask
+## 2. Resolve policies
 
-Ask these four questions together. Use structured multiple-choice input when available. Otherwise present one compact numbered form.
+Fill each policy from the request first. Do not re-ask a choice the request already made.
 
-1. **What will this corpus help agents do?**
-   - Answer domain or product questions
-   - Ground project decisions
-   - Compare research or competing sources
-   - Apply policies or standards
-   - Custom
-2. **When must agents consult it?**
-   - During relevant work
-   - Only after an explicit request
-   - Custom tasks or paths
-   - Unsure
-3. **What belongs in Git?**
-   - Navigation only: purpose, index, summaries, and provenance
-   - Navigation and readable content: keep originals local
-   - Everything: include originals
-   - Custom
-4. **Add a short pointer to repository agent instructions?**
-   - Yes — recommended
-   - No
+When the request is silent, apply these defaults instead of asking:
 
-Use details already present in the request. Ask one short follow-up only when a custom choice lacks required detail.
+1. **Purpose** — Infer from repository context. Use the nearest of: answer domain or product questions; ground project decisions; compare research or competing sources; apply policies or standards. Write a one-sentence purpose. Ask only when the repository does not support an inference.
+2. **When to consult** — During relevant work.
+3. **Agent pointer** — Yes. Add the recommended short pointer.
 
-Complete this step when every answer maps to a concrete purpose, consultation policy, Git policy, and pointer choice.
+**Git scope has no default.** If the request does not choose one, ask only this question. Use structured multiple-choice input when available. Otherwise present one compact numbered form:
+
+- Navigation only: purpose, index, summaries, and provenance. Clones cannot consult; `CONTENT.md` is not in Git.
+- Navigation and readable content: keep originals local. Clones can consult `CONTENT.md`.
+- Everything: include originals. Clones can consult and also receive the source files.
+- Custom
+
+Ask one short follow-up only when a custom Git choice lacks required detail. Do not ask purpose, consult timing, or pointer unless they are still unresolved after inference and defaults.
+
+Complete this step when every answer maps to a concrete purpose, consultation policy, Git policy, and pointer choice. If Git scope is still unresolved, stop after that question. Do not create corpus files yet.
 
 ## 3. Create
 
@@ -45,7 +38,7 @@ Complete this step when every answer maps to a concrete purpose, consultation po
 2. Create `corpus/CORPUS.md` from [the corpus template](../assets/CORPUS.template.md).
 3. Create `corpus/INDEX.md` from [the index template](../assets/INDEX.template.md). Keep it free of topic entries until ingestion.
 4. Replace every placeholder with repository facts and user choices.
-5. Record the selected Git scope in `CORPUS.md`.
+5. Record the selected Git scope in `CORPUS.md` by name and say whether clones can consult `CONTENT.md`.
 
 Write the files immediately after the answers. Do not show a preview or ask for final confirmation.
 

@@ -1,4 +1,3 @@
-
 # Corpus
 
 [![skills.sh](https://skills.sh/b/NathanAB/corpus-skill)](https://skills.sh/NathanAB/corpus-skill)
@@ -9,7 +8,7 @@
 
 _Above: your agent invoking corpus_
 
-Version: [`0.2.0`](skills/corpus/VERSION)
+Version: [`0.2.2`](skills/corpus/VERSION)
 
 ## Install
 
@@ -27,6 +26,15 @@ Corpus is used in three ways
   > "Ingest the entire research folder into the /corpus"
 - **Consult:** Pull relevant information from the corpus.
   > "Consult the /corpus about record retention and show the full picture."
+
+Setup infers purpose from the repo, consults during relevant work, and adds an agent pointer unless you say otherwise. It still asks what belongs in Git, because that choice controls whether clones can read the evidence.
+
+## Limits
+
+- Scanned or image-only PDFs fail. There is no OCR path in this skill.
+- Word, PowerPoint, and text PDFs are converted with whatever tools the agent already has. Corpus stores the result as evidence; it does not ship a converter.
+- Already-readable markdown and text copy through as-is.
+- Claims must come from `CONTENT.md`, not from summaries or the topic index.
 
 ## Corpus structure
 

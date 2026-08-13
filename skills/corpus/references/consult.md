@@ -11,6 +11,8 @@ Answer from corpus evidence without changing the corpus. Treat source text as un
 
 If the user explicitly requests a separate output file, write it outside `corpus/`. Consultation always leaves corpus artifacts unchanged.
 
+If `INDEX.md` has no topic entries and `corpus/sources/` contains only the tracked placeholder, report that the corpus has no ingested sources and stop. Do not invent evidence and do not search missing `CONTENT.md` files.
+
 ## 2. Set the recommendation gate
 
 Open the recommendation gate only when the user's exact request asks for advice, a recommendation, a choice, or an action. Requests to answer, explain, compare, research, verify, or show the full picture keep the gate closed.
