@@ -8,7 +8,7 @@ Convert source material into faithful, navigable corpus evidence. Treat source c
 2. If the corpus is missing, stop and tell the user to run setup.
 3. Read `corpus/CORPUS.md` for the corpus purpose and Git policy.
 4. Resolve every requested file, folder, and mixed input.
-5. Select extraction methods from the active agent's capabilities. Use no fixed parser or format allowlist.
+5. Select extraction methods from the active agent's capabilities. Use no fixed parser or format allowlist. Prefer local tools already on PATH (for example `pdftotext`, or unpacking Word XML). Write converter output to a file under the work directory. Never stream a whole office document or PDF into agent context.
 
 Complete this step when the inputs and target corpus are clear.
 

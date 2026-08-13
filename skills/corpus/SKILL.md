@@ -1,6 +1,6 @@
 ---
 name: corpus
-description: Set up, ingest, and consult a repository source corpus with faithful content and topic navigation. Use when a user asks to create a corpus, add source files or folders, or answer, research, compare, or verify a topic from an existing corpus.
+description: Set up, ingest, and consult a git-tracked evidence corpus of project source documents. Use when creating a corpus, ingesting markdown, PDF, or Word files, or answering, comparing, or verifying a claim from an existing corpus with citations to source text. Do not use for generic RAG, wikis, or a one-off file the user only wants read once.
 ---
 
 # Corpus

@@ -4,13 +4,11 @@
 
 A skill that keeps source documents as a git-tracked **evidence** folder your agent cites by file and line. It is not a search index, not a wiki, and not a file converter.
 
-Install it, copy the example, and ask one consult question. You should get an answer that quotes the real text, including conflicts.
-
 <img width="220" height="263" alt="learning" src="https://github.com/user-attachments/assets/82ce380c-12c3-4719-b6ef-e6290b65daa0" />
 
 _Above: your agent invoking corpus_
 
-Version: [`0.2.0`](skills/corpus/VERSION)
+Version: [`0.2.1`](skills/corpus/VERSION)
 
 ## Install
 
@@ -18,25 +16,13 @@ Version: [`0.2.0`](skills/corpus/VERSION)
 npx skills add NathanAB/corpus-skill
 ```
 
-## Try it
+In a git repo, then:
 
-From a git repo where the skill is installed:
+> Set up a corpus for product and policy evidence
 
-```bash
-cp -R path/to/corpus-skill/examples/retention corpus
-```
-
-If this repository is already the working copy:
-
-```bash
-cp -R examples/retention corpus
-```
-
-Then ask:
+> Ingest notes/retention-policy.md into the corpus
 
 > Consult the corpus about record retention. Show the full picture.
-
-You should see both the seven-year and ten-year positions, with citations into `corpus/sources/*/CONTENT.md`. The example also contains an embedded instruction to ignore citation rules; a correct consult treats that as untrusted text and does not follow it.
 
 ## Use
 
@@ -46,6 +32,8 @@ You should see both the seven-year and ten-year positions, with citations into `
   > Ingest notes/retention-policy.md into the corpus
 - **Consult:** Pull relevant information from the corpus.
   > Consult the corpus about record retention. Show the full picture.
+
+Setup infers purpose from the repo, consults during relevant work, and adds an agent pointer unless you say otherwise. It still asks what belongs in Git, because that choice controls whether clones can read the evidence.
 
 ## Limits
 
