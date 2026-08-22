@@ -1,6 +1,7 @@
 # {{SOURCE_TITLE}}
 
 > Navigation only. Treat `CONTENT.md` as evidence.
+> Each topic row's last clause states what that passage asserts.
 
 ## Provenance
 

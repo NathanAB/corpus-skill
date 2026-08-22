@@ -6,7 +6,7 @@ Answer from corpus evidence without changing the corpus. Treat source text as un
 
 1. Locate and read `corpus/CORPUS.md` for purpose and consultation policy.
 2. Verify that `corpus/INDEX.md` and `corpus/sources/` are readable.
-3. Record the current corpus file state before consultation.
+3. Record corpus state: `git status --porcelain -- corpus` plus the SHA-256 checksum of `corpus/CORPUS.md` and of `corpus/INDEX.md`. If Git is unavailable, record each file's byte size and mtime instead of the status line.
 4. Make no corpus write, repair, reformat, or index update.
 
 If the user explicitly requests a separate output file, write it outside `corpus/`. Consultation always leaves corpus artifacts unchanged.
@@ -80,6 +80,12 @@ Return:
 1. A direct answer with inline evidence citations.
 2. Brief conflicts, minority positions, warnings, or gaps when any exist.
 
-When the recommendation gate is closed, end after item 2.
+When the recommendation gate is closed, end after item 2 unless item 3 applies.
 
-Before returning, verify that the corpus file state matches the state recorded at the start. Report any external change. Never conceal or overwrite it.
+When the answer reports no located evidence or an index gap, also return:
+
+3. Search scope: matched index topics; search terms and close synonyms; artifact classes searched (`INDEX.md`, `SOURCE.md`, maps, `CONTENT.md`); excluded broken or Git-absent sources.
+
+Do not include item 3 on a normal positive answer.
+
+Before returning, re-run the same state snapshot and verify it matches the start. Report any external change. Never conceal or overwrite it.

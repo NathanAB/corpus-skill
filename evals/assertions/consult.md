@@ -9,7 +9,9 @@ Evaluate the consultation scenario after the agent finishes.
 - Every factual claim cites a source title and exact readable-content lines.
 - After indexed routing, a lexical completeness search finds relevant sources or passages omitted by a partial topic entry.
 - The index-miss answer searches every source card and readable-content file and reports the miss.
+- The index-miss answer names matched index topics, search terms, artifact classes searched, and excluded sources, and leaves the index unchanged.
 - The legal-hold answer states that scheduled deletion stops until the hold is released.
 - The no-evidence answer limits its absence claim to the corpus.
+- The no-evidence answer names matched index topics, search terms, artifact classes searched (`INDEX.md`, `SOURCE.md`, maps, `CONTENT.md`), and excluded broken or Git-absent sources.
 - No answer gives a recommendation because none was requested.
 - No consultation changes a corpus artifact.

@@ -8,7 +8,7 @@
 
 _Above: your agent invoking corpus_
 
-Version: [`0.2.2`](skills/corpus/VERSION)
+Version: [`0.3.0`](skills/corpus/VERSION)
 
 ## Install
 
@@ -18,7 +18,7 @@ npx skills add NathanAB/corpus-skill
 
 ## Use
 
-Corpus is used in three ways
+Corpus is used in four ways
 
 - **Setup:** A one-time setup to bootstrap the corpus.
   > "Set up a /corpus for product and policy evidence"
@@ -26,6 +26,8 @@ Corpus is used in three ways
   > "Ingest the entire research folder into the /corpus"
 - **Consult:** Pull relevant information from the corpus.
   > "Consult the /corpus about record retention and show the full picture."
+- **Lint:** Audit navigation and integrity. Repair only when asked.
+  > "Lint the /corpus navigation. Report false topic routes."
 
 Setup infers purpose from the repo, consults during relevant work, and adds an agent pointer unless you say otherwise. It still asks what belongs in Git, because that choice controls whether clones can read the evidence.
 
