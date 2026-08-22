@@ -16,6 +16,12 @@ Version: [`0.3.0`](skills/corpus/VERSION)
 npx skills add NathanAB/corpus-skill
 ```
 
+## Update
+
+```bash
+bunx skills update corpus
+```
+
 ## Use
 
 Corpus is used in four ways
