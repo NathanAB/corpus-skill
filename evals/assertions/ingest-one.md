@@ -8,6 +8,7 @@ Evaluate the single-source scenario after the agent finishes.
 - The source card records provenance, content metrics, a grounded summary, topics, warnings, exact readable-content ranges, and available original locators.
 - The content map covers every readable-content line once without gaps or overlaps.
 - The topic index contains short routes to every relevant passage.
+- Each topic route's last clause states what the passage asserts.
 - The summary and index do not claim authority as evidence.
 - The final response reports success and any extraction uncertainty.
 - The local integrity check finds no missing artifact or broken range.
